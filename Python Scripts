@@ -1,5 +1,4 @@
 ### Script #1
-
 #! /usr/bin/python
 
 from pynput import keyboard
@@ -19,7 +18,6 @@ if __name__ == “__main__”:
 	input()
 
 ### Script #2
-
 import pynput
 from pynput.keyboard import Key, listener
 import logging
